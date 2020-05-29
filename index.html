@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            height: 100%;
+            background-color: black;
+            color: white;
+            font-family: 'Cousine', monospace;
+        }
+        
+        .center {
+            width: 550px;
+            height: 550px;
+            margin: 0 auto;
+            letter-spacing: 50px;
+            font-size: 2em;
+            line-height: 75px;
+            color: #2d3436;
+        }
+        
+        #es,
+        #esch,
+        .active {
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center" id="center">
+        <div class="row"><span id=es>ES</span>K<span id=esch>ESCH</span>A<span id=fuf>FÜF</span></div>
+        <div class="row"><span id=viertel>VIERTEL</span>F<span id=zaa>ZÄÄ</span></div>
+        <div class="row"><span id=zwanzg>ZWÄNZG</span>E<span id=vor>VOR</span>K</div>
+        <div class="row"><span id=ab>AB</span>O<span id=halbi>HALBI</span>EPM</div>
+        <div class="row"><span id=eis>EIS</span><span id=zwoi>ZWÖI</span>L<span id=dru>DRÜ</span></div>
+        <div class="row"><span id=vieri>VIERI</span>W<span id=fufi>FOIFI</span></div>
+        <div class="row"><span id=sachsi>SÄCHSI</span><span id=sebni>SEBNI</span></div>
+        <div class="row"><span id=achti>ACHTI</span><span id=nuni>NÜNI</span>EL</div>
+        <div class="row"><span id=zani>ZÄNI</span>ERB<span id=elfi>ELFI</span></div>
+        <div class="row"><span id=zwoufi>ZWÖLFI</span>AM<span id=uhr>UHR</span></div>
+    </div>
+
+
+    <script>
+        const timeElements = []
+        timeElements.push(document.getElementById("es"));
+        timeElements.push(document.getElementById("esch"));
+        timeElements.push(document.getElementById("fuf"));
+        timeElements.push(document.getElementById("viertel"));
+        timeElements.push(document.getElementById("zaa"));
+        timeElements.push(document.getElementById("zwanzg"));
+        timeElements.push(document.getElementById("vor"));
+        timeElements.push(document.getElementById("ab"));
+        timeElements.push(document.getElementById("halbi"));
+        timeElements.push(document.getElementById("eis"));
+        timeElements.push(document.getElementById("zwoi"));
+        timeElements.push(document.getElementById("dru"));
+        timeElements.push(document.getElementById("vieri"));
+        timeElements.push(document.getElementById("fufi"));
+        timeElements.push(document.getElementById("sachsi"));
+        timeElements.push(document.getElementById("sebni"));
+        timeElements.push(document.getElementById("achti"));
+        timeElements.push(document.getElementById("nuni"));
+        timeElements.push(document.getElementById("zani"));
+        timeElements.push(document.getElementById("elfi"));
+        timeElements.push(document.getElementById("zwoufi"));
+        timeElements.push(document.getElementById("uhr"));
+
+
+
+        function setTime() {
+
+            let current = new Date();
+            let hour = current.getHours();
+
+            switch (current.getMinutes()) {
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                    document.getElementById("fuf").classList.add("active");
+                    document.getElementById("ab").classList.add("active");
+                    break;
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                    document.getElementById("zaa").classList.add("active");
+                    document.getElementById("ab").classList.add("active");
+                    break;
+                case 13:
+                case 14:
+                case 15:
+                case 16:
+                case 17:
+                    document.getElementById("viertel").classList.add("active");
+                    document.getElementById("ab").classList.add("active");
+                    break;
+                case 18:
+                case 19:
+                case 20:
+                case 22:
+                case 23:
+                case 24:
+                    document.getElementById("zwanzg").classList.add("active");
+                    document.getElementById("ab").classList.add("active");
+                    break;
+                case 25:
+                case 26:
+                case 27:
+                    document.getElementById("fuf").classList.add("active");
+                    document.getElementById("vor").classList.add("active");
+                    document.getElementById("halbi").classList.add("active");
+                    hour += 1;
+                case 28:
+                case 29:
+                case 30:
+                case 31:
+                case 32:
+                    document.getElementById("halbi").classList.add("active");
+                    hour += 1;
+                    break;
+                case 33:
+                case 34:
+                case 35:
+                case 36:
+                case 37:
+                    document.getElementById("fuf").classList.add("active");
+                    document.getElementById("ab").classList.add("active");
+                    document.getElementById("halbi").classList.add("active");
+                    hour += 1;
+                    break;
+                case 38:
+                case 39:
+                case 40:
+                case 41:
+                case 42:
+                    document.getElementById("zwanzg").classList.add("active");
+                    document.getElementById("vor").classList.add("active");
+                    hour += 1;
+                    break;
+                case 43:
+                case 44:
+                case 45:
+                case 46:
+                case 47:
+                    document.getElementById("viertel").classList.add("active");
+                    document.getElementById("vor").classList.add("active");
+                    hour += 1;
+                    break;
+                case 48:
+                case 49:
+                case 50:
+                case 51:
+                case 52:
+                    document.getElementById("zaa").classList.add("active");
+                    document.getElementById("vor").classList.add("active");
+                    hour += 1;
+                    break;
+                case 53:
+                case 54:
+                case 55:
+                case 56:
+                case 57:
+                    document.getElementById("fuf").classList.add("active");
+                    document.getElementById("vor").classList.add("active");
+                    hour += 1;
+                    break;
+
+                case 58:
+                case 59:
+                    hour += 1;
+                    break;
+
+            }
+
+
+            switch (hour) {
+                case 0:
+                case 00:
+                case 12:
+                case 24:
+                    document.getElementById("zwoufi").classList.add("active");
+                    break;
+
+                case 23:
+                case 11:
+                    document.getElementById("elfi").classList.add("active");
+                    break;
+
+                case 22:
+                case 10:
+                    document.getElementById("zani").classList.add("active");
+                    break;
+
+                case 21:
+                case 9:
+                    document.getElementById("nuni").classList.add("active");
+                    break;
+
+                case 20:
+                case 8:
+                    document.getElementById("achti").classList.add("active");
+                    break;
+
+                case 19:
+                case 7:
+                    document.getElementById("sebni").classList.add("active");
+                    break;
+
+                case 18:
+                case 6:
+                    document.getElementById("sachsi").classList.add("active");
+                    break;
+
+                case 17:
+                case 5:
+                    document.getElementById("fufi").classList.add("active");
+                    break;
+
+                case 16:
+                case 4:
+                    document.getElementById("vieri").classList.add("active");
+                    break;
+
+                case 15:
+                case 3:
+                    document.getElementById("dru").classList.add("active");
+                    break;
+                case 14:
+                case 2:
+                    document.getElementById("zwoi").classList.add("active");
+                    break;
+
+                case 13:
+                case 1:
+                    document.getElementById("eis").classList.add("active");
+                    break;
+            }
+
+
+
+        }
+
+        setTime();
+
+        setInterval(() => {
+
+            let current = new Date();
+            console.log("check time: " + current.getHours() + ":" + current.getMinutes());
+
+            var elements = document.body.getElementsByTagName("*");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove('active');
+            }
+
+
+            setTime();
+
+        }, 1000);
+    </script>
+
+
+
+</body>
+
+</html>
